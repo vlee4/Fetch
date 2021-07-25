@@ -8,14 +8,14 @@ const ListResults = ({breeds}) => {
     return (
         <div>This will list results
             <div>{Object.entries(breeds).map(([breed,subBreed], idx)=>{
-                //If the breed has a sub-breed array it will display as a list item
+                //If the breed has a sub-breed array it will display as a list item link
                 if(subBreed.length){
                     return(
                         <Fragment key={`dog_breed_${idx}`}>
-                        <Link to={`/${breed}`}><ul>Breed: {breed}</ul></Link>
-                        <>{subBreed.map(sub=>{
+                        <Link to={`/breed/${breed}`}><ul>Breed: {breed}</ul></Link>
+                        <>{subBreed.map((sub, idx)=>{
                             return(
-                                <li>Sub-breed: {sub}</li>
+                                <Link to={`/breed/${breed}/${sub}`} key={`dog_subBreed_${idx}`}><li >Sub-breed: {sub}</li></Link>
                             )
                         })}</>
                     </Fragment>
@@ -23,7 +23,7 @@ const ListResults = ({breeds}) => {
                 }
                 else{
                     return (
-                        <Link to={`/${breed}`}><ul key={`dog_breed_${idx}`}>Breed: {breed}</ul></Link>
+                        <Link to={`/breed/${breed}`} key={`dog_breed_${idx}`}><ul >Breed: {breed}</ul></Link>
                     )
                 }
             })}</div>
