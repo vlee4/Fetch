@@ -1,17 +1,17 @@
 //Homepage Component
 
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import ListResults from "./ListResults"
 import axios from "axios";
 
 const Home = () => {
-
+const [breeds, setBreeds] = useState({})
 
 useEffect(()=>{
     const fetchDogs = async() =>{
         try{
             const {data} = await axios.get("https://dog.ceo/api/breeds/list/all")  
-            console.log('dog breeds:', data.message)
+            setBreeds(data.message)
         }catch(err){
             console.log(err)
         }
@@ -21,7 +21,7 @@ useEffect(()=>{
 
     return (
         <div>This is the Homepage
-            <ListResults/>
+            <ListResults breeds={breeds}/>
         </div>
     )
 }
