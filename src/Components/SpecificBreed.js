@@ -1,7 +1,7 @@
 //SpecificBreed Component: Will display 4 random dog pictures of a specific breed + 'Back' button
 
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import axios from 'axios';
 
 const SpecificBreed = () => {
@@ -15,6 +15,7 @@ const SpecificBreed = () => {
                 if(params.subBreed){
                     const {data} = await axios.get(`https://dog.ceo/api/breed/${params.breed}/${params.subBreed}/images/random/4`);
                     setPictures(data.message)
+                    console.log(data)
                    
                 }else{ //If the user is viewing a general breed, the component will GET 4 random pictuers of the general breed
                     const {data} = await axios.get(`https://dog.ceo/api/breed/${params.breed}/images/random/4`);
@@ -25,14 +26,15 @@ const SpecificBreed = () => {
             }
         }
         fetchPictures()
-    },[pictures, params])
+    },[])
   
     return (
         <div>
+            <Link to="/">Back</Link>
             <h2>{params.breed} {params.subBreed?params.subBreed:""}</h2>
             {pictures?.map((picURL, idx)=>{
                 return(
-                    <img key={`dog_${idx}`} src={picURL}></img>
+                    <img key={`dog_${idx}`} src={picURL} alt={`${params.breed} ${params.subBreed?params.subBreed:""}picture ${idx}`}></img>
                 )
             })}
         </div>
