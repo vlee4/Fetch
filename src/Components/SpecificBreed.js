@@ -1,6 +1,6 @@
 //SpecificBreed Component: Will display 4 random dog pictures of a specific breed + 'Back' button
 
-import React from 'react';
+import React from "react";
 
 const SpecificBreed = () => {
     return (
