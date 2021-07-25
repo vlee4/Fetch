@@ -1,6 +1,6 @@
 //ListResults Component: will display list of dog breeds (all or searched)
 
-import React from 'react';
+import React from "react";
 
 const ListResults = () => {
     return (
