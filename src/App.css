@@ -2,14 +2,28 @@
   text-align: center;
 }
 
+ul {
+  text-align: left;
+}
+
+/* ------ListResults------  */
 .breed {
-  list-style-type: disc;
+  list-style-type: none;
 }
 
 .sub-breed {
   list-style-type: circle;
 }
 
-ul {
-  text-align: left;
+
+.list-results {
+  grid-template-columns: repeat(3, 30%);
+  grid-auto-rows: minmax(auto, min-content);
+  grid-auto-columns: 30%;
+  column-gap: 2em;
+
+}
+
+.list-group-item+.list-group-item {
+  border-top-width: 1px;
 }

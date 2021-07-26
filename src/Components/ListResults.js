@@ -6,13 +6,13 @@ import {Link} from "react-router-dom";
 const ListResults = ({breeds}) => {
     console.log("breeds", breeds)
     return (
-        <div className="container">This will list results
+        <div className="container">
             <div className="d-flex justify-content-center">
-                <ul className="d-sm-flex flex-column align-items-start">{Object.entries(breeds).map(([breed,subBreed], idx)=>{
+                <ul className="list-results list-group d-sm-flex flex-column align-items-start d-md-grid px-md-5 py-md-3">{Object.entries(breeds).map(([breed,subBreed], idx)=>{
                     //If the breed has a sub-breed array it will display as a list item link
                     if(subBreed.length){
                         return(
-                            <span key={`dog_breed_${idx}`}>
+                            <span className="list-group-item" key={`dog_breed_${idx}`}>
                             <li className="breed">Breed: <Link to={`/breed/${breed}`}>{breed}</Link></li>
                             <ul>{subBreed.map((sub, idx)=>{
                                 return(
@@ -24,7 +24,7 @@ const ListResults = ({breeds}) => {
                     }
                     else{
                         return (
-                            <li className="breed" key={`dog_breed_${idx}`}>Breed: <Link to={`/breed/${breed}`} >{breed}</Link></li>
+                            <li className="breed list-group-item" key={`dog_breed_${idx}`}>Breed: <Link to={`/breed/${breed}`} >{breed}</Link></li>
                         )
                     }
                 })}</ul>
