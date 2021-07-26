@@ -27,7 +27,7 @@ const SpecificBreed = () => {
             }
         }
         fetchPictures()
-    },[])
+    },[params.breed, params.subBreed])
   
     return (
         <div>
@@ -35,7 +35,7 @@ const SpecificBreed = () => {
             <h2>{params.breed} {params.subBreed?params.subBreed:""}</h2>
             <div className="container d-flex flex-wrap">{pictures?.map((picURL, idx)=>{
                 return(
-                    <img key={`dog_${idx}`} src={picURL} alt={`${params.breed} ${params.subBreed?params.subBreed:""}picture ${idx}`} className="img-fluid max-vh-50 w-sm-100 w-md-50 p-2"></img>
+                    <img key={`dog_${idx}`} src={picURL} alt={`${params.breed} ${params.subBreed?params.subBreed:""} ${idx}`} className="img-fluid max-vh-50 w-sm-100 w-md-50 p-2"></img>
                 )
             })}</div>
         </div>
