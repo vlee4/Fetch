@@ -1,6 +1,6 @@
 //ListResults Component: will display list of dog breeds (all or searched)
 
-import React,{Fragment} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 
 const ListResults = ({breeds}) => {
@@ -12,14 +12,14 @@ const ListResults = ({breeds}) => {
                     //If the breed has a sub-breed array it will display as a list item link
                     if(subBreed.length){
                         return(
-                            <Fragment key={`dog_breed_${idx}`}>
+                            <span key={`dog_breed_${idx}`}>
                             <li className="breed">Breed: <Link to={`/breed/${breed}`}>{breed}</Link></li>
                             <ul>{subBreed.map((sub, idx)=>{
                                 return(
                                     <li className="sub-breed" key={`dog_subBreed_${idx}`}>Sub-breed: <Link to={`/breed/${breed}/${sub}`}>{sub}</Link></li>
                                 )
                             })}</ul>
-                        </Fragment>
+                        </span>
                         )
                     }
                     else{
