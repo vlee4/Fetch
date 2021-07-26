@@ -24,7 +24,7 @@ const ListResults = ({breeds}) => {
                     }
                     else{
                         return (
-                            <li className="breed">Breed: <Link to={`/breed/${breed}`} key={`dog_breed_${idx}`}>{breed}</Link></li>
+                            <li className="breed" key={`dog_breed_${idx}`}>Breed: <Link to={`/breed/${breed}`} >{breed}</Link></li>
                         )
                     }
                 })}</ul>
