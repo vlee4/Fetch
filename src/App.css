@@ -9,3 +9,7 @@
 .sub-breed {
   list-style-type: circle;
 }
+
+ul {
+  text-align: left;
+}
