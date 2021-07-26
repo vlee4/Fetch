@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.breed {
+  list-style-type: disc;
+}
+
+.sub-breed {
+  list-style-type: circle;
+}
