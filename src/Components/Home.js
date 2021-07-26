@@ -10,11 +10,13 @@ const [breeds, setBreeds] = useState({})
 const [filter, setFilter] = useState("");
 const [results, setResults] = useState({})
 
+//handleFilter takes the list of dog breeds generated on page load & generates an object with dog breeds that match the input substring
 const handleFilter = () => {
     if(filter&&breeds){
-        let filteredResults = Object.entries(breeds).filter(([breed, subBreed])=>{
+        let filteredResults = {};
+        Object.entries(breeds).forEach(([breed, subBreed])=>{
             if(breed.includes(filter)){
-                return true;
+                filteredResults[breed] = [subBreed];
             }
         })
         console.log('filtered results: ', filteredResults)
