@@ -16,7 +16,7 @@ const SpecificBreed = () => {
                 if(params.subBreed){
                     const {data} = await axios.get(`https://dog.ceo/api/breed/${params.breed}/${params.subBreed}/images/random/4`);
                     setPictures(data.message)
-                    console.log(data)
+                    
                    
                 }else{ //If the user is viewing a general breed, the component will GET 4 random pictuers of the general breed
                     const {data} = await axios.get(`https://dog.ceo/api/breed/${params.breed}/images/random/4`);
@@ -27,15 +27,15 @@ const SpecificBreed = () => {
             }
         }
         fetchPictures()
-    },[])
+    },[params.breed, params.subBreed])
   
     return (
         <div>
-            <Link to="/">Back</Link>
+            <span className="d-flex"><Link to="/">{`<< Back`}</Link></span>
             <h2>{params.breed} {params.subBreed?params.subBreed:""}</h2>
-            <div className="container d-flex flex-wrap">{pictures?.map((picURL, idx)=>{
+            <div className="container d-flex flex-wrap justify-content-center">{pictures?.map((picURL, idx)=>{
                 return(
-                    <img key={`dog_${idx}`} src={picURL} alt={`${params.breed} ${params.subBreed?params.subBreed:""}picture ${idx}`} className="img-fluid max-vh-50 w-sm-100 w-md-50 p-2"></img>
+                    <img key={`dog_${idx}`} src={picURL} alt={`${params.breed} ${params.subBreed?params.subBreed:""} ${idx}`} className="img-fluid max-vh-50 w-sm-100 w-md-50 p-2"></img>
                 )
             })}</div>
         </div>

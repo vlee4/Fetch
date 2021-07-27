@@ -2,10 +2,37 @@
   text-align: center;
 }
 
+img {
+  max-height: 50vh;
+}
+
+/* ------ListResults------  */
 .breed {
-  list-style-type: disc;
+  list-style-type: none;
+  box-shadow: 2px 0.5px 2px 0.2px #80808075;
+}
+
+.breed-wrapper {
+  box-shadow: 2px 0.5px 2px 0.2px #80808075
 }
 
 .sub-breed {
-  list-style-type: circle;
+  list-style-type: none;
+}
+
+
+.list-results {
+  grid-template-columns: repeat(3, 30%);
+  grid-auto-rows: minmax(auto, min-content);
+  grid-auto-columns: 30%;
+  column-gap: 2em;
+
+}
+
+.list-group-item {
+  width: 100%;
+}
+
+.list-group-item+.list-group-item {
+  border-top-width: 1px;
 }

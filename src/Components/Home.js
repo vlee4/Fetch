@@ -49,8 +49,13 @@ useEffect(()=>{
 
     return (
         <div>
-               <label>Filter dog breeds:  <input type="search" aria-label="Filter dog breeds" value={filter} onChange={(e)=>onFilterChange(e)}></input></label>
-                <button type="button" className="btn btn-primary m-1" onClick={handleFilter}>Search</button>
+            <span role="search" className="d-flex flex-column flex-md-row justify-content-center align-items-center">
+               <label htmlFor="filter">Filter dog breeds: </label>
+               <span className="d-flex align-items-center">
+                    <input type="search" id="filter" className="mx-1" value={filter} onChange={(e)=>onFilterChange(e)}></input>
+                    <button type="button" className="btn btn-primary m-1" onClick={handleFilter}>Search</button>
+                </span>
+            </span>
             <ListResults breeds={filter&&searched? results: breeds}/>
         </div>
     )
