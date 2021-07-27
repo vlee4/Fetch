@@ -2,10 +2,13 @@
   text-align: center;
 }
 
+img {
+  max-height: 50vh;
+}
+
 /* ------ListResults------  */
 .breed {
   list-style-type: none;
-  /* outline: 1px grey solid; */
   box-shadow: 2px 0.5px 2px 0.2px #80808075;
 }
 

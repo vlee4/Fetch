@@ -31,9 +31,9 @@ const SpecificBreed = () => {
   
     return (
         <div>
-            <Link to="/">Back</Link>
+            <span className="d-flex"><Link to="/">{`<< Back`}</Link></span>
             <h2>{params.breed} {params.subBreed?params.subBreed:""}</h2>
-            <div className="container d-flex flex-wrap">{pictures?.map((picURL, idx)=>{
+            <div className="container d-flex flex-wrap justify-content-center">{pictures?.map((picURL, idx)=>{
                 return(
                     <img key={`dog_${idx}`} src={picURL} alt={`${params.breed} ${params.subBreed?params.subBreed:""} ${idx}`} className="img-fluid max-vh-50 w-sm-100 w-md-50 p-2"></img>
                 )
