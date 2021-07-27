@@ -9,7 +9,7 @@ Fetch will allow users to do the following:
     - Navigate back to the list page without a page refresh
 
 ## Start-up instructions (development)
-This React app can be started simply by typing `npm start` into the console. The app should be available momentarily in the browser at `http://localhost:3000/`
+This React app can be started simply by typing `npm start` into the terminal. The app should be available momentarily in the browser at `http://localhost:3000/`
 
 ## Potential Features for Improvement
 - When the dog breeds are filtered, the card sizing is not always appropriate for the result (ie. the breed listing will overflow from the card). Flex-grid column widths or the parent width may need changing.
