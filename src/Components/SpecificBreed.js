@@ -8,7 +8,7 @@ const SpecificBreed = () => {
     const params = useParams();
     const [pictures, setPictures] = useState([]);
 
-    //Load pictures once, using url params to make the appropriate GET request
+    //Load pictures, using url params to make the appropriate GET request; will be triggered again if params changes
     useEffect(()=>{
         const fetchPictures = async() =>{
             try{

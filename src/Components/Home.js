@@ -35,6 +35,7 @@ const handleFilter = () => {
     }
 }
 
+//Makes a GET request for all dog breeds available, once
 useEffect(()=>{
     const fetchDogs = async() =>{
         try{

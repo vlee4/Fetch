@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import SpecificBreed from "./Components/SpecificBreed";
 
+//Different components are rendered in Routes depending on the url path specified
 const Routes = () => {
     return(
         <Switch>
