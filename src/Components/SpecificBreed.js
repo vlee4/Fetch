@@ -16,7 +16,7 @@ const SpecificBreed = () => {
                 if(params.subBreed){
                     const {data} = await axios.get(`https://dog.ceo/api/breed/${params.breed}/${params.subBreed}/images/random/4`);
                     setPictures(data.message)
-                    console.log(data)
+                    
                    
                 }else{ //If the user is viewing a general breed, the component will GET 4 random pictuers of the general breed
                     const {data} = await axios.get(`https://dog.ceo/api/breed/${params.breed}/images/random/4`);

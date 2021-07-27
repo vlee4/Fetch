@@ -4,7 +4,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const ListResults = ({breeds}) => {
-    console.log("breeds", breeds)
+    
     return (
         <div className="container">
             <div className="d-flex justify-content-center">
