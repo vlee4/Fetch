@@ -2,17 +2,19 @@
   text-align: center;
 }
 
-ul {
-  text-align: left;
-}
-
 /* ------ListResults------  */
 .breed {
   list-style-type: none;
+  /* outline: 1px grey solid; */
+  box-shadow: 2px 0.5px 2px 0.2px #80808075;
+}
+
+.breed-wrapper {
+  box-shadow: 2px 0.5px 2px 0.2px #80808075
 }
 
 .sub-breed {
-  list-style-type: circle;
+  list-style-type: none;
 }
 
 
@@ -22,6 +24,10 @@ ul {
   grid-auto-columns: 30%;
   column-gap: 2em;
 
+}
+
+.list-group-item {
+  width: 100%;
 }
 
 .list-group-item+.list-group-item {
