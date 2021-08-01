@@ -2,21 +2,21 @@
 import axios from "axios";
 
 //ACTIONS
-const GET_ALL_RESULTS = "GET_ALL_RESULTS";
+const GET_ALL_BREEDS = "GET_ALL_BREEDS";
 const SET_FILTER = "SET_FILTER";
 const SET_SEARCHED = "SET_SEARCHED";
 
 //ACTION CREATORS
-const getAllResults = (results) => {
+const getAllBreeds = (breeds) => {
     return{
-        type: GET_ALL_RESULTS,
-        results
+        type: GET_ALL_BREEDS,
+        breeds
     }
 }
 
 const getFiltered = (filter, filterResults) => {
     return {
-        type: GET_FILTERED,
+        type: SET_FILTER,
         filter,
         filterResults
     }
@@ -30,24 +30,33 @@ const setSearchState = (state) => {
 }
 
 //THUNK (CREATORS)
-export const fetchResults = () => {
+export const fetchBreeds = () => {
     return async dispatch => {
         try{
-            const {data} = axios.get("https://dog.ceo/api/breeds/list/all")
-            dispatch(getResults(data.message))
+            const {data} = await axios.get("https://dog.ceo/api/breeds/list/all")
+            console.log('data', data.message)
+            dispatch(getAllBreeds(data.message))
         }catch(err){
             console.log(err)
         }
     }
 }
 
-//REDUCER
+const initialState = {
+    breeds:{
+        loading: true
+    }, 
+    filter:"",
+    filteredResults: {},
+    searched: false   
+}
 
-const resultsReducer = (state={}, action) =>{
+//REDUCER
+const resultsReducer = (state=initialState, action) =>{
     switch(action.type){
-        case GET_RESULTS:
-            return {...state, results: action.results}
-        case GET_FILTERED:
+        case GET_ALL_BREEDS:
+            return {...state, breeds: action.breeds}
+        case SET_FILTER:
             return {...state, filter: action.filter, filteredResults: action.filterResults}
         case SET_SEARCHED:
             return {...state, searched: action.state}
