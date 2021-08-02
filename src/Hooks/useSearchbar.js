@@ -7,7 +7,7 @@ import { setFilter, setFilteredResults, setSearchState } from "../Store/results"
 
 const useSearchbar = () =>{
     const dispatch = useDispatch();
-    const {breeds, filter, searched} = useSelector(state=> state.results);
+    const {breeds, filter, searched} = useSelector(state=> state.breedsResults);
 
 
 

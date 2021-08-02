@@ -7,7 +7,7 @@ import results from "./results"
 import specificBreedReducer from "./specificBreed";
 
 const reducer = combineReducers({
-    results,
+    breedsResults: results,
     specificBreed: specificBreedReducer
 })
 
