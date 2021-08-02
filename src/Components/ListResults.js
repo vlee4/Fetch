@@ -10,6 +10,12 @@ const ListResults = ({breeds}) => {
             <div>Loading...</div>
         )
     }
+
+    else if(!Object.getOwnPropertyNames(breeds).length){
+        return (
+            <div>No results found for that search =(</div>
+        )
+    }
     
     return (
         <div className="container">

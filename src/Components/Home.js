@@ -20,11 +20,11 @@ const Home = () => {
     },[dispatch])
 
     
-        return (
-            <div>
-                <Searchbar/>
-                <ListResults breeds={filter&&searched? filteredResults: breeds}/>
-            </div>
+    return (
+        <div>
+            <Searchbar/>
+            <ListResults breeds={filter&&searched? filteredResults: breeds}/>
+        </div>
         )
     }
 
