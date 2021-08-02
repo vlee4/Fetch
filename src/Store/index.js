@@ -4,9 +4,11 @@ import ThunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import results from "./results"
+import specificBreedReducer from "./specificBreed";
 
 const reducer = combineReducers({
-    results
+    results,
+    specificBreed: specificBreedReducer
 })
 
 const middleware = composeWithDevTools(
