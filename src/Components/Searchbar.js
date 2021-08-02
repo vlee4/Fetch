@@ -1,40 +1,12 @@
 //Searchbar: Receives filter substrings & triggers filtering of breeds data
-
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
 
-//Dispatcher
-import { setFilter, setFilteredResults, setSearchState } from "../Store/results";
+//Custom Hooks
+import useSearchbar from "../Hooks/useSearchbar";
 
 
 const Searchbar = () => {
-    const dispatch = useDispatch();
-    const {breeds, filter, searched} = useSelector(state=> state.results);
-
-    const onFilterChange = (e) => {
-        //Set searched to false if new search inputted to prevent rendering old results
-        if(searched){
-            dispatch(setSearchState(false))
-        }
-        dispatch(setFilter(e.target.value))
-        
-    }
-
-    //handleFilter takes the list of dog breeds generated on page load & generates an object with dog breeds that match the input substring
-    const handleFilter = () => {
-        dispatch(setSearchState(false))
-        if(filter&&breeds){
-            let filteredResults = {};
-            Object.entries(breeds).forEach(([breed, subBreed])=>{
-                if(breed.includes(filter)){
-                    filteredResults[breed] = [...subBreed];
-                }
-            })
-            console.log("filter", filter, "filteredREsults", filteredResults)
-            dispatch(setFilteredResults(filteredResults))
-            dispatch(setSearchState(true))
-        }
-    }
+    const {filter, onFilterChange, handleFilter} = useSearchbar();
 
 
     return(
