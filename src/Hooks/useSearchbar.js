@@ -30,7 +30,7 @@ const useSearchbar = () =>{
                     filteredResults[breed] = [...subBreed];
                 }
             })
-            console.log("filter", filter, "filteredREsults", filteredResults)
+
             dispatch(setFilteredResults(filteredResults))
             dispatch(setSearchState(true))
         }
